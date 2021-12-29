@@ -2,7 +2,6 @@
 
 use std::io::{self, Result as IoResult, Write};
 
-use crossterm::style::Stylize;
 pub use qrcode::types::Color::{self, Dark as QrDark, Light as QrLight};
 
 use crate::matrix::Matrix;
@@ -73,22 +72,22 @@ impl Renderer {
     /// using color inversion (so "█" = " " inverted, and "▀" = "▄" inverted).
     /// "▄" seems to render better than "▅".
     fn black_above_white<W: Write>(&self, target: &mut W) -> IoResult<()> {
-        write!(target, "{}", "▄".white().on_black())
+        write!(target, "▄")
     }
 
     /// Similar to `black_above_white`
     fn white_above_black<W: Write>(&self, target: &mut W) -> IoResult<()> {
-        write!(target, "{}", "▄".black().on_white())
+        write!(target, "▀")
     }
 
     /// Similar to `black_above_white`
     fn black_above_black<W: Write>(&self, target: &mut W) -> IoResult<()> {
-        write!(target, "{}", " ".white().on_black())
+        write!(target, " ")
     }
 
     /// Similar to `black_above_white`
     fn white_above_white<W: Write>(&self, target: &mut W) -> IoResult<()> {
-        write!(target, "{}", " ".black().on_white())
+        write!(target, "█")
     }
 
     /// Print newline that does not mess up colors.

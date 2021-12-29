@@ -1,3 +1,5 @@
+## your terminal must have a dark background for this to work
+
 [![Build status on GitLab CI][gitlab-ci-master-badge]][gitlab-ci-link]
 [![Newest release on crates.io][crate-version-badge]][crate-link]
 [![Documentation][docs-badge]][docs]
@@ -24,7 +26,7 @@ fn main() {
 }
 ```
 
-![qr2term example screenshot](./res/qr2term-example.png)
+![qr2term without crossterm screenshot](./res/without-crossterm.png)
 
 This library is based on [`qair`](https://code.willemp.be/willem/qair),
 which didn't provide the renderer as a library on it's own.
